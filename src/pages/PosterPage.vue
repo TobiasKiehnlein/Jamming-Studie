@@ -463,5 +463,22 @@ onMounted(async () => {
     margin: 0;
   }
   .badge-dot { display: none; }
+
+  /* Gradient-clip text is invisible when printed — replace with solid colours */
+  .title-line1 {
+    background: none !important;
+    -webkit-text-fill-color: #00d4ff !important;
+    color: #00d4ff !important;
+  }
+  .title-line2 {
+    background: none !important;
+    -webkit-text-fill-color: #a78bfa !important;
+    color: #a78bfa !important;
+  }
+  .contact-eyebrow {
+    background: none !important;
+    -webkit-text-fill-color: #00d4ff !important;
+    color: #00d4ff !important;
+  }
 }
 </style>

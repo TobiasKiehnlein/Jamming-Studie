@@ -78,7 +78,7 @@ export const translations: Record<Locale, Translation> = {
             },
             {
               q: 'Wie unterstützt Mixed Reality meine Kreativität?',
-              a: 'Virtuelle Visualisierungen reagieren in Echtzeit auf deine Musik, schaffen eine einzigartige Atmosphäre und eröffnen völlig neue Wege der Improvisation. Mixed Reality kann Kreativität auf Arten entfachen, die physische Räume allein nicht ermöglichen.',
+              a: 'Stell dir vor, du spielst in einem ausverkauften Konzertsaal, mitten in der Natur oder in einem gemütlichen Studio – ganz so, wie es zu deiner Stimmung passt. Die virtuelle Umgebung lässt sich frei konfigurieren und schafft eine Atmosphäre, die dich und dein*e Partner*in auf eine völlig neue Art inspiriert.',
             },
             {
               q: 'Kann ich wirklich remote mit jemandem improvisieren?',
@@ -171,7 +171,7 @@ export const translations: Record<Locale, Translation> = {
             },
             {
               q: 'How does Mixed Reality support my creativity?',
-              a: 'Virtual visualizations respond to your music in real time, creating a unique atmosphere and opening up entirely new avenues for improvisation. Mixed Reality can spark creativity in ways that physical spaces alone simply cannot.',
+              a: 'Imagine playing in a sold-out concert hall, out in the wild, or in a cosy studio — whatever suits your mood. The virtual environment is fully configurable and creates an atmosphere that inspires both you and your partner in a completely new way.',
             },
             {
               q: 'Can I really improvise remotely with someone?',

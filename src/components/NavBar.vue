@@ -83,6 +83,10 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   transition: background 0.3s ease;
+  /* Stable GPU layer — prevents backdrop-filter from causing flicker
+     on Android when child elements animate nearby */
+  will-change: transform;
+  transform: translateZ(0);
 }
 .nav.scrolled {
   background: rgba(7, 7, 15, 0.95);
@@ -106,10 +110,12 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   background: var(--magenta);
   border-radius: 50%;
   animation: dot-pulse 2s ease-in-out infinite;
+  will-change: opacity;
 }
 @keyframes dot-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.4; transform: scale(0.6); }
+  /* opacity-only: single cheap GPU property, no recomposite of backdrop-filter */
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
 }
 
 /* Desktop links */

@@ -167,6 +167,9 @@ onMounted(async () => {
   position: relative;
   z-index: 1;
   width: 100%;
+  /* Own compositor layer — isolates content from bg orb/ring animations */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .hero-body {
@@ -193,10 +196,12 @@ onMounted(async () => {
   background: var(--cyan);
   border-radius: 50%;
   animation: dot-pulse 2s ease-in-out infinite;
+  will-change: opacity;
 }
 @keyframes dot-pulse {
-  0%,100% { opacity: 1; transform: scale(1); }
-  50%     { opacity: 0.3; transform: scale(0.6); }
+  /* opacity-only — no transform, avoids repainting content layer */
+  0%,100% { opacity: 1; }
+  50%     { opacity: 0.25; }
 }
 
 .hero-title {
@@ -214,8 +219,8 @@ onMounted(async () => {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  background-size: 200% 200%;
-  animation: title-shift 9s ease infinite;
+  /* background-position animation on background-clip:text is never GPU-composited
+     — it repaints the text layer every frame. Static gradient instead. */
 }
 .line-2 {
   display: block;
@@ -223,10 +228,6 @@ onMounted(async () => {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-@keyframes title-shift {
-  0%,100% { background-position: 0% 50%; }
-  50%     { background-position: 100% 50%; }
 }
 
 .hero-subtitle {

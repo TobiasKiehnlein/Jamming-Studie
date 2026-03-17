@@ -71,7 +71,7 @@ body {
 }
 .fade-in.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none; /* 'none' releases the compositor layer; translateY(0) would keep it */
 }
 .fade-in.d1 { transition-delay: 0.1s; }
 .fade-in.d2 { transition-delay: 0.2s; }

@@ -78,18 +78,30 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--section-x);
+  /* Fixed base — never changes, so backdrop-filter never repaints */
   background: rgba(7, 7, 15, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  transition: background 0.3s ease;
-  /* Stable GPU layer — prevents backdrop-filter from causing flicker
-     on Android when child elements animate nearby */
   will-change: transform;
   transform: translateZ(0);
+  isolation: isolate;
 }
-.nav.scrolled {
-  background: rgba(7, 7, 15, 0.95);
+/* Scrolled overlay — opacity-only transition on a child element.
+   Opacity is GPU-composited and does NOT trigger backdrop-filter repaint,
+   which eliminates the flicker when scrolling back to the top on Android. */
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 7, 15, 0.38);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+.nav.scrolled::before {
+  opacity: 1;
 }
 
 /* Logo */

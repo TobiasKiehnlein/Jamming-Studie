@@ -56,6 +56,22 @@ onMounted(async () => {
         Dein*e Partner*in erscheint virtuell in deinem Sichtfeld – als wärst du mit ihr oder ihm im selben Raum.
       </p>
 
+      <!-- ── PHOTO STRIP ── -->
+      <div class="photo-strip">
+        <div class="strip-img-wrap">
+          <img src="/images/image3.jpg"  alt="Schlagzeugerin mit VR-Headset" class="strip-img" />
+        </div>
+        <div class="strip-img-wrap">
+          <img src="/images/image.jpg"   alt="Gitarrist mit VR-Headset" class="strip-img" />
+        </div>
+        <div class="strip-img-wrap">
+          <img src="/images/image5.jpeg" alt="Akustik-Gitarristin mit VR-Headset" class="strip-img" />
+        </div>
+        <div class="strip-img-wrap">
+          <img src="/images/image4.jpeg" alt="Akkordeon-Spieler mit VR-Headset" class="strip-img" />
+        </div>
+      </div>
+
       <!-- ── HIGHLIGHTS 2×2 ── -->
       <div class="highlights">
         <div class="hi-card c1">
@@ -204,11 +220,11 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   padding: 12mm 13mm 8mm;
-  justify-content: space-between;
+  gap: 5mm; /* consistent spacing between all sections */
 }
 
 /* ── Header ── */
-.header { display: flex; flex-direction: column; gap: 3.5mm; }
+.header { display: flex; flex-direction: column; gap: 3mm; }
 
 .badge {
   display: inline-flex;
@@ -287,6 +303,27 @@ onMounted(async () => {
   margin: 0;
 }
 
+/* ── Photo strip ── */
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4mm;
+}
+.strip-img-wrap {
+  aspect-ratio: 1 / 1; /* square crop — ~20mm shorter than 3:4, frees space for section gaps */
+  overflow: hidden;
+  border-radius: 7px;
+  border: 1px solid rgba(0,212,255,0.18);
+}
+.strip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: brightness(0.88) saturate(1.08);
+}
+
 /* ── Highlights ── */
 .highlights {
   display: grid;
@@ -340,6 +377,7 @@ onMounted(async () => {
   display: flex;
   gap: 8mm;
   align-items: flex-end;
+  margin-top: auto; /* absorbs all remaining space — pushes contact away from cards above */
 }
 
 .contact {

@@ -15,6 +15,7 @@ export interface FaqGroup {
 export interface Translation {
   nav: {
     home: string
+    photos: string
     faq: string
     cta: string
     langSwitch: string
@@ -24,6 +25,11 @@ export interface Translation {
     subtitle: string
     text: string
     cta: string
+  }
+  gallery: {
+    label: string
+    title: string
+    captions: [string, string, string, string, string, string]
   }
   faq: {
     label: string
@@ -48,6 +54,7 @@ export const translations: Record<Locale, Translation> = {
   de: {
     nav: {
       home: 'Home',
+      photos: 'Fotos',
       faq: 'FAQ',
       cta: 'Mitmachen →',
       langSwitch: 'EN',
@@ -57,6 +64,11 @@ export const translations: Record<Locale, Translation> = {
       subtitle: 'Musiker*innen für spannende Mixed-Reality-Studie gesucht!',
       text: 'Spielst du ein Instrument und hast Lust, etwas Neues auszuprobieren? Dann mach mit bei unserer Studie zum Musizieren in Mixed Reality! Zwei Musiker*innen jammen gemeinsam – unterstützt durch Mixed-Reality-Headsets. Du spielst dein Instrument ganz normal, während dein*e Partner*in und virtuelle Elemente digital in deinem Sichtfeld erscheinen. Eine völlig neue Art, gemeinsam Musik zu machen – auch über Distanz.',
       cta: 'Jetzt mitmachen',
+    },
+    gallery: {
+      label: 'Impressionen',
+      title: 'So sieht\'s aus',
+      captions: ['E-Gitarre', 'E-Schlagzeug', 'Akustikgitarre', 'E-Bass', 'Akkordeon', 'Mehr Gitarre :)'],
     },
     faq: {
       label: 'Fragen & Antworten',
@@ -141,6 +153,7 @@ export const translations: Record<Locale, Translation> = {
   en: {
     nav: {
       home: 'Home',
+      photos: 'Photos',
       faq: 'FAQ',
       cta: 'Join →',
       langSwitch: 'DE',
@@ -150,6 +163,11 @@ export const translations: Record<Locale, Translation> = {
       subtitle: 'Musicians wanted for an exciting Mixed Reality study!',
       text: 'Do you play an instrument and want to try something new? Join our Mixed Reality music study! Two musicians jam together — supported by Mixed Reality headsets. You play your instrument as normal while your partner and virtual elements appear digitally in your field of view. A whole new way of making music together — even across distances.',
       cta: 'Join now',
+    },
+    gallery: {
+      label: 'Gallery',
+      title: 'See It in Action',
+      captions: ['Electric Guitar', 'Electronic Drums', 'Acoustic Guitar', 'Electric Bass', 'Accordion', 'More guitar :)'],
     },
     faq: {
       label: 'Questions & Answers',

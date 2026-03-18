@@ -34,6 +34,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
     <!-- Desktop links -->
     <ul class="nav-links">
       <li><a href="#home">{{ t.nav.home }}</a></li>
+      <li><a href="#impressionen">{{ t.nav.photos }}</a></li>
       <li><a href="#faq">{{ t.nav.faq }}</a></li>
       <li>
         <button class="lang-btn" @click="toggle" :aria-label="`Switch to ${t.nav.langSwitch}`">
@@ -62,6 +63,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   <div :class="['nav-mobile', { open: menuOpen }]">
     <ul>
       <li><a href="#home" @click="closeMenu">{{ t.nav.home }}</a></li>
+      <li><a href="#impressionen" @click="closeMenu">{{ t.nav.photos }}</a></li>
       <li><a href="#faq" @click="closeMenu">{{ t.nav.faq }}</a></li>
       <li><a href="#kontakt" @click="closeMenu">{{ locale === 'de' ? 'Mitmachen' : 'Join' }}</a></li>
     </ul>

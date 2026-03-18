@@ -112,7 +112,7 @@ onMounted(async () => {
         <div class="contact">
           <p class="contact-eyebrow">Interesse geweckt?</p>
           <p class="contact-desc">
-            Melde dich per E-Mail für weitere Infos zur Teilnahme. Teile uns kurz dein Alter, dein Instrument und dein Spielniveau mit.
+            Melde dich per E-Mail für weitere Infos zur Teilnahme. Teile uns kurz dein Alter und dein Instrument mit – und bring am besten gleich jemanden mit, mit dem du zusammen jammen möchtest!
           </p>
           <a class="contact-email" href="mailto:jamming-studie@kiehnlein.de">
             <span class="email-icon">✉</span>
@@ -141,7 +141,7 @@ onMounted(async () => {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 /* ── Poster shell ── */
 .poster {
   width: 210mm;
@@ -503,20 +503,20 @@ onMounted(async () => {
   .badge-dot { display: none; }
 
   /* Gradient-clip text is invisible when printed — replace with solid colours */
-  .title-line1 {
-    background: none !important;
-    -webkit-text-fill-color: #00d4ff !important;
-    color: #00d4ff !important;
-  }
-  .title-line2 {
-    background: none !important;
-    -webkit-text-fill-color: #a78bfa !important;
-    color: #a78bfa !important;
-  }
-  .contact-eyebrow {
-    background: none !important;
-    -webkit-text-fill-color: #00d4ff !important;
-    color: #00d4ff !important;
-  }
+  //.title-line1 {
+  //  background: none !important;
+  //  -webkit-text-fill-color: #00d4ff !important;
+  //  color: #00d4ff !important;
+  //}
+  //.title-line2 {
+  //  background: none !important;
+  //  -webkit-text-fill-color: #a78bfa !important;
+  //  color: #a78bfa !important;
+  //}
+  //.contact-eyebrow {
+  //  background: none !important;
+  //  -webkit-text-fill-color: #00d4ff !important;
+  //  color: #00d4ff !important;
+  //}
 }
 </style>
